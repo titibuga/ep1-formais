@@ -27,6 +27,7 @@ use strict;
 # distintos nessa linha. E como não podem haver casas vazias, analogamente,
 # também não poderá haver casas com mais de 1 número ( logo não precisaremos
 # verificar essa condição ).
+# E isso ocorre nos casos de colunas e mini quadrados.
 
 
 package main;
