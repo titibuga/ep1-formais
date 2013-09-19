@@ -31,27 +31,39 @@
 O gerador de cláusulas na Formal Normal Conjuntiva (\emph{Normal Conjuctive Form}) para o problema do Sudoku foi implementado em \emph{Perl}, no arquivo 
 \emph{sudoku.pl}. Além desse arquivo, usamos um outro script, implementado no arquivo \emph{tradutor.pl}, para a solução ser impressa no terminal.
 
-O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo progaram \textbf{\color{red}minisat}, sendo esse chamado internamente pelo script. Para isso supomos que o minisat esteja instalado e possa ser executado com o comando \emph{minisat} pelo \emph{bash}.
+O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo \emph{SAT solver} \textbf{\color{red}minisat}, sendo esse chamado internamente pelo script. Para isso supomos que o minisat esteja instalado e possa ser executado com o comando \emph{minisat} pelo \emph{bash}.
 
 
 \section{Construção das cláusulas}
 
-Para a construção da cláusula definimos as variaveis $p_{ijk}, 1< i,j,k<9$, sendo que, se em uma valoração $v(p_{ijk}) = 1 $
+Para a construção da cláusula definimos as variaveis $p_{ijk}, 0< i,j,k<N$ 
+do mesmo modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos
+$v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número
+$k+1$.
 
 As cláusulas são contruidas com base nas seguintes condições:
 
 \section{Como executar}
 
-Para executar o programa, é necessário antes dar permissão de execução tanto para o arquivo \emph{sudoku.pl} quanto para \emph{tradutor.pl}. Para fazer isto em um terminal \textbf{\color{red}bash}, basta executar a seguinte linha de comando:\footnote{O programa supoe que o seu interpretador de per esteja localizado no endereço {\color{red}/usr/bin/perl}. Caso deseje usar um iterpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
+Para executar o programa, é necessário antes dar permissão de execução tanto para o arquivo \emph{sudoku.pl} quanto para \emph{tradutor.pl}. Para fazer isto em um terminal \textbf{\color{red}bash}, basta executar a seguinte linha de comando:\footnote{O programa supoe que o seu interpretador de perl esteja localizado no endereço {\color{red}/usr/bin/perl}. Caso des. Caso deseje usar um iterpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
 
 \begin{verbatim}
-meu_prompt$>chmod +x sudoku.pl tradutor.pl
+meu_prompt$ chmod +x sudoku.pl tradutor.pl
 \end{verbatim}
 
 Para executar um programa, basta executar a seguinte linha de comando(em \textbf{\color{red}bash}):
 
 \begin{verbatim}
-meu_prompt$>./sudoku.pl arquivoDeEntrada.txt
+meu_prompt$ eje usar um iterpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
+
+\begin{verbatim}
+meu_prompt$ chmod +x sudoku.pl tradutor.pl
+\end{verbatim}
+
+Para executar um programa, basta executar a seguinte linha de comando(em \textbf{\color{red}bash}):
+
+\begin{verbatim}
+meu_prompt$ ./sudoku.pl arquivoDeEntrada.txt
 \end{verbatim}
 
 Onde o \emph{arquivoDeEntrada.txt} contém um sudoku 9x9, no formato descrito pelo enunciado. O sudoku resolvido será impresso na \textbf{\color{red}stdin}.
