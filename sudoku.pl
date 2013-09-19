@@ -5,6 +5,10 @@ use warnings;
 use strict;
 
 
+# Karina Suemi Awoki         nUSP: 7572102
+# Victor Sanches Portella    nUSP: 7991152
+
+
 # Neste EP, utilizamos a seguinte lógica:
 
 # (1). Sempre haverá um representante de cada número em todas as colunas.
