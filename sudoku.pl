@@ -1,5 +1,4 @@
 #!/usr/bin/perl
-use v5.14;
 
 use warnings;
 use strict;
@@ -31,6 +30,20 @@ use strict;
 
 
 package main;
+
+
+######################### CONFIGURAÇÕES - MUDE AQUI ##############################
+
+
+our $minisatPATH = "/home/bcc/karina/bin/minisat";
+
+
+
+####################################################################################
+
+
+
+
 
 open(SAIDA,">", "saida2.txt");
 
@@ -237,7 +250,7 @@ sub escreveijk
 $, = " | ";
 
 # Chamando o minisat com a saida gerada por este programa.
-qx|minisat saida2.txt a.out|;
+qx|./$minisatPATH saida2.txt a.out|;
 
 # Chamando o programa que imprime a matriz resposta.
 my $resposta = qx|./tradutor.pl a.out|;
