@@ -28,7 +28,7 @@
 
 \section{Informações gerais}
 
-O gerador de cláusulas na Formal Normal Conjuntiva (\emph{Normal Conjuctive Form}) para o problema do Sudoku foi implementado em \emph{Perl}, no arquivo 
+O gerador de cláusulas na Forma Normal Conjuntiva (\emph{Normal Conjuctive Form}) para o problema do Sudoku foi implementado em \emph{Perl}, no arquivo 
 \emph{sudoku.pl}. Além desse arquivo, usamos um outro script, implementado no arquivo \emph{tradutor.pl}, para a solução ser impressa no terminal.
 
 O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo \emph{SAT solver} \textbf{\color{red}minisat}, sendo esse chamado internamente pelo script. Para isso supomos que o minisat esteja instalado e possa ser executado com o comando \emph{minisat} pelo \emph{bash}.
@@ -36,8 +36,8 @@ O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo \emph{SA
 
 \section{Construção das cláusulas}
 
-Para a construção da cláusula definimos as variáveis $p_{ijk}, 0\leq i,j,k<N$ 
-do mesmo modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos $v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número $k+1$.
+Para a construção das cláusulas, definimos as variáveis $p_{ijk}, 0\leq i,j,k<N$ 
+de modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos $v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número $k+1$.
 
 As cláusulas são construídas com base nas seguintes condições:
 
@@ -58,7 +58,7 @@ As cláusulas são construídas com base nas seguintes condições:
  
 \end{itemize}
 
-Sendo $Q(R) = \{ (i,j) |$ A casa $(i,j)$ está no mini quadrado de indice $R \}$, sendo os mini quadrados os conjuntos de casas de um quadrado 3x3 de um Sudoku 9x9, e sendo a função \textbf{\color{red}escreveijk()} uma função definida no código que define uma um número unicamente com uma variavel $p_{ijk}$.
+Sendo $Q(R) = \{ (i,j) |$ A casa $(i,j)$ está no mini quadrado de indice $R \}$, sendo os mini quadrados os conjuntos de casas de um quadrado 3x3 de um Sudoku 9x9, e sendo a função \textbf{\color{red}escreveijk()} uma função definida no código que define um número unicamente com uma variável $p_{ijk}$.
 
 
 
