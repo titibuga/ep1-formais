@@ -21,7 +21,7 @@
 
 \item Victor Sanches Portella - Nº USP: 7991152
 
-\item Karina Awoku - Nº USP: 7572102
+\item Karina Suemi Awoki - Nº USP: 7572102
 
 \end{itemize}
 
@@ -36,10 +36,10 @@ O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo \emph{SA
 
 \section{Construção das cláusulas}
 
-Para a construção da cláusula definimos as variaveis $p_{ijk}, 0\leq i,j,k<N$ 
+Para a construção da cláusula definimos as variáveis $p_{ijk}, 0\leq i,j,k<N$ 
 do mesmo modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos $v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número $k+1$.
 
-As cláusulas são contruidas com base nas seguintes condições:
+As cláusulas são construídas com base nas seguintes condições:
 
 \begin{itemize}
 
@@ -58,7 +58,7 @@ As cláusulas são contruidas com base nas seguintes condições:
  
 \end{itemize}
 
-Sendo $Q(R) = \{ (i,j) |$ A casa $(i,j)$ está no mini-quadrado de indice $R \}$, sendo os mini-quadrados os conjuntos de casas de um quadrado 3x3 de um Sudoku 9x9, e sendo a função \textbf{\color{red}escreveijk()} uma função definida no código que define uma um número unicamente com uma variavel $p_{ijk}$.
+Sendo $Q(R) = \{ (i,j) |$ A casa $(i,j)$ está no mini quadrado de indice $R \}$, sendo os mini quadrados os conjuntos de casas de um quadrado 3x3 de um Sudoku 9x9, e sendo a função \textbf{\color{red}escreveijk()} uma função definida no código que define uma um número unicamente com uma variavel $p_{ijk}$.
 
 
 
@@ -70,7 +70,7 @@ Como terá um que ter um representante de cada número em uma linha e essa
 
 \section{Como executar}
 
-Para executar o programa, é necessário antes dar permissão de execução tanto para o arquivo \emph{sudoku.pl} quanto para \emph{tradutor.pl}. Para fazer isto em um terminal \textbf{\color{red}bash}, basta executar a seguinte linha de comando:\footnote{O programa supoe que o seu interpretador de perl esteja localizado no endereço {\color{red}/usr/bin/perl}. Caso des. Caso deseje usar um iterpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
+Para executar o programa, é necessário antes dar permissão de execução tanto para o arquivo \emph{sudoku.pl} quanto para \emph{tradutor.pl}. Para fazer isto em um terminal \textbf{\color{red}bash}, basta executar a seguinte linha de comando:\footnote{O programa supõe que o seu interpretador de perl esteja localizado no endereço {\color{red}/usr/bin/perl}. Caso deseje usar um interpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
 
 \begin{verbatim}
 meu_prompt$ chmod +x sudoku.pl tradutor.pl
@@ -78,8 +78,6 @@ meu_prompt$ chmod +x sudoku.pl tradutor.pl
 
 Para executar um programa, basta executar a seguinte linha de comando(em \textbf{\color{red}bash}):
 
-\begin{verbatim}
-meu_prompt$ eje usar um iterpretador localizado em outro local, modifique a primeira linha dos arquivos \emph{sudoku.pl} e \emph{tradutor.pl}}
 
 \begin{verbatim}
 meu_prompt$ chmod +x sudoku.pl tradutor.pl
