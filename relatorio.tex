@@ -36,12 +36,37 @@ O programa \emph{sudoku.pl} gera cláusulas à serem interpretadas pelo \emph{SA
 
 \section{Construção das cláusulas}
 
-Para a construção da cláusula definimos as variaveis $p_{ijk}, 0< i,j,k<N$ 
-do mesmo modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos
-$v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número
-$k+1$.
+Para a construção da cláusula definimos as variaveis $p_{ijk}, 0\leq i,j,k<N$ 
+do mesmo modo semelhante ao sugerido no enunciado, ou seja, se em uma valoração $v$ temos $v(p_{ijk}) = 1$, isso siguinifica que na casa $(i+1,j+1)$ do sudoku temos o número $k+1$.
 
 As cláusulas são contruidas com base nas seguintes condições:
+
+\begin{itemize}
+
+ \item[+] Sempre haverá um representante de cada número em todas as colunas: $p_{i1k}\vee p_{i2k}\vee \cdots \vee p_{i(j-1)k}\vee p_{ijk}$
+ \item[+] Sempre haverá um representante de cada número em todas as linhas:
+ $p_{ij1}\vee p_{ij2}\vee \cdots \vee p_{ij(k-1)}\vee p_{ijk}$
+ \item[+] Sempre haverá um representante de cada número em todos os quadrados:
+ $p_{r_{1}s_{1}k}\vee p_{r_{2}s_{2}k}\vee \cdots \vee p_{r_{i-1}s_{j}k}\vee p_{r_{i}s_{j}k}$ com $r_{i}, s_{j} \in Q(R), \forall R \in \{0\cdots N-1\} $
+ \item[+] Não deve haver mais de 1 número na mesma coluna:
+ $\neg p_{i_{1}jk}\vee \neg p_{i_{2}jk}$, com $i_{1}<i_{2} $
+ \item[+] Não deve haver mais de 1 número na mesma linha:
+ $\neg p_{ij_{1}k}\vee \neg p_{ij_{2}k}  $, com $j_{1}<j{2} $
+ \item[+] Não deve haver mais de 1 número no mesmo quadrado:
+ $\neg p_{r_{1}s_{1}k}\vee \neg p_{r_{2}s_{2}k} $ com $r_{1},r_{2}, s_{1}, s_{2} \in Q(R), \forall R \in \{0\cdots N-1\}$ e escreveijk($r_{1},s_{1},k$)$<$ escreveijk($ r_{2},s_{2},k $).
+ 
+ 
+\end{itemize}
+
+Sendo $Q(R) = \{ (i,j) |$ A casa $(i,j)$ está no mini-quadrado de indice $R \}$, sendo os mini-quadrados os conjuntos de casas de um quadrado 3x3 de um Sudoku 9x9, e sendo a função \textbf{\color{red}escreveijk()} uma função definida no código que define uma um número unicamente com uma variavel $p_{ijk}$.
+
+
+
+Como terá um que ter um representante de cada número em uma linha e essa
+ linha não pode conter números repetidos, então haverá exatos N números
+ distintos nessa linha. E como não podem haver casas vazias, analogamente,
+ também não poderão haver casas com mais de 1 número ( logo não precisaremos
+ verificar essa condição ). E o mesmo ocorre com as colunas e mini quadrados.
 
 \section{Como executar}
 
