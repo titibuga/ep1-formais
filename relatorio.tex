@@ -93,4 +93,14 @@ meu_prompt$ ./sudoku.pl arquivoDeEntrada.txt
 
 Onde o \emph{arquivoDeEntrada.txt} contém um sudoku 9x9, no formato descrito pelo enunciado. O sudoku resolvido será impresso na \textbf{\color{red}stdin}.
 
+Caso haja problemas na chamada do minisat de dentro do \textbf{sudoku.pl}, o programa sempre produz um arquivo \textbf{\color{red}saida2.txt} no formato de entrada para o minisat. Assim, forneça o arquivo \textbf{\color{red}saida2.txt} como entrada para o minisat, e forneça a saida do minisat como entrada para o \textbf{tradutor.pl}:
+
+
+\begin{verbatim}
+meu_prompt$ minisat saida2.txt a.out
+meu_prompt$ ./tradutor.pl a.out
+\end{verbatim}
+
+
+
 \end{document}
