@@ -12,6 +12,11 @@ package main;
 my @vetor;
 while(<>)
 {
+  if(m/.*UNSAT.*/ )
+  {
+    print "INSATISFATÍVEL\n";
+    die;
+  }
   $_ =~ s/SAT//;
   @vetor = (@vetor,split);
 }

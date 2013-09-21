@@ -35,7 +35,7 @@ package main;
 ######################### CONFIGURAÇÕES - MUDE AQUI ##############################
 
 
-our $minisatPATH = "/home/bcc/karina/bin/minisat";
+our $minisatPATH = "/home/tibuga/minisat/minisat/core/minisat";
 
 
 
@@ -78,8 +78,9 @@ $nClaus += 4*($N**2)+( 3*($N**3)*($N-1)/2 );
   
 #-------------------------------------------------------------------------------------------------------------
 
+my $nVar = $N**3;
 #Começo do arquivo cnf:
-print SAIDA "p cnf $N $nClaus\n";
+print SAIDA "p cnf $nVar $nClaus\n";
 
 
 #-------------------------------------------------------------------------------------------------------------
@@ -250,7 +251,7 @@ sub escreveijk
 $, = " | ";
 
 # Chamando o minisat com a saida gerada por este programa.
-qx|./$minisatPATH saida2.txt a.out|;
+qx|$minisatPATH saida2.txt a.out|;
 
 # Chamando o programa que imprime a matriz resposta.
 my $resposta = qx|./tradutor.pl a.out|;
